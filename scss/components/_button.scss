@@ -1,0 +1,12 @@
+.main-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $main-green;
+    text-transform: uppercase;
+    color: #fff;
+
+    &:hover {
+        background-color: darken($main-green, 5%);
+    }
+}

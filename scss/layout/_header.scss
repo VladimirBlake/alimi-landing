@@ -1,0 +1,142 @@
+.header {
+    position: fixed;
+    background-color: #fff;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 95px;
+    z-index: 10;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.05);
+
+    &__wrap {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 95px;
+    }
+
+    &__logotype {
+        font-size: 24px;
+        font-weight: 800;
+        color: $main-green;
+
+        &--second-part {
+            color: $main-black;
+            margin-left: 11px;
+        }
+    }
+
+    &__menu {
+        display: none;
+    }
+
+    &__hamburger-wrapper {
+        &--open {
+            div.header__hamburger-line {
+                &:first-child {
+                    top: 9px;
+                    transform: rotate(45deg);
+                }
+                &:last-child,
+                &:nth-child(2) {
+                    transform: rotate(-45deg);
+                }
+
+                &:last-child {
+                    top: -10px;
+                }
+            }
+        }
+    }
+
+    &__hamburger-line {
+        transform: rotate(0deg);
+        position: relative;
+        width: 37px;
+        height: 3px;
+        background: #6A6A6A;
+        &:not(:last-child) {
+            margin-bottom: 7px;
+        }
+    }
+
+    &__mobile-menu {
+        position: fixed;
+        right: 0;
+        top: 95px;
+        width: 320px;
+        height: calc(100vh - 95px);
+        background-color: #fff;
+        transform: translateX(340px);
+        box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.05);
+        padding: 45px;
+
+        &--open {
+            transform: translateX(0px);
+        }
+    }
+
+    &__mobile-menu-list {
+        padding: 0;
+        list-style-type: none;
+    }
+
+    &__mobile-menu-item a, 
+    &__mobile-menu-item a:visited {
+        color: $main-black;
+    }
+
+    &__mobile-menu-item {
+        font-size: 28px;
+        font-weight: 600;
+        margin-bottom: 20px;
+
+        a:hover {
+            color: $main-green;
+        }
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .header {
+        &__hamburger-wrapper {
+            display: none;
+        }
+
+        &__menu {
+            display: flex;
+            list-style-type: none;
+
+            &-item {
+                font-size: 20px;
+                font-weight: 300;
+
+                &:not(:first-child) {
+                    margin-left: 40px;
+                }
+
+                a, a:visited {
+                    color: $main-black;
+                    cursor: pointer;
+                }
+            }
+        }
+
+        &__socials-wrapper {
+            margin-left: 70px;
+        }
+
+        &__social-link {
+            &:first-child {
+                margin-right: 15px;
+                svg:hover path {
+                    fill: $main-green;
+                }
+            }
+
+            &:nth-child(2) svg:hover path {
+                stroke: $main-green;
+            }
+        }
+    }
+}
