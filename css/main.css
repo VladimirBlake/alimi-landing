@@ -281,8 +281,19 @@ main.container {
     display: flex;
     list-style-type: none; }
     .header__menu-item {
+      position: relative;
       font-size: 20px;
       font-weight: 300; }
+      .header__menu-item::after {
+        position: absolute;
+        content: "";
+        width: 0%;
+        height: 2px;
+        background-color: #1ABC9C;
+        top: 30px;
+        left: 0px; }
+      .header__menu-item:hover::after {
+        width: 100%; }
       .header__menu-item:not(:first-child) {
         margin-left: 40px; }
       .header__menu-item a, .header__menu-item a:visited {
@@ -326,8 +337,19 @@ main.container {
     display: flex;
     list-style-type: none; }
     .footer__menu-item {
+      position: relative;
       font-size: 20px;
       font-weight: 300; }
+      .footer__menu-item::after {
+        position: absolute;
+        content: "";
+        width: 0%;
+        height: 2px;
+        background-color: #1ABC9C;
+        top: 30px;
+        left: 0px; }
+      .footer__menu-item:hover::after {
+        width: 100%; }
       .footer__menu-item:not(:last-child) {
         margin-right: 40px; }
       .footer__menu-item a, .footer__menu-item a:visited {

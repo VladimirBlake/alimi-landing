@@ -55,8 +55,23 @@
             list-style-type: none;
 
             &-item {
+                position: relative;
                 font-size: 20px;
                 font-weight: 300;
+
+                &::after {
+                    position: absolute;
+                    content: "";
+                    width: 0%;
+                    height: 2px;
+                    background-color: $main-green;
+                    top: 30px;
+                    left: 0px;
+                }
+
+                &:hover::after {
+                    width: 100%;
+                }
 
 
                 &:not(:last-child) {
